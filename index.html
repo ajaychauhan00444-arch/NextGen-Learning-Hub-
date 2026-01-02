@@ -3,120 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NextGen Learning Hub | Ajay Chauhan</title>
+    <title>NextGen Learning Hub | Er. Ajay Chauhan</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root { --primary: #007bff; --secondary: #28a745; --dark: #333; --light: #f4f4f4; --accent: #ffc107; }
-        body { font-family: 'Segoe UI', sans-serif; margin: 0; line-height: 1.6; background: var(--light); color: var(--dark); scroll-behavior: smooth; }
+        :root { --primary: #004085; --secondary: #28a745; --accent: #ffc107; --dark: #1a1a1a; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background: #f0f2f5; color: var(--dark); scroll-behavior: smooth; }
         
-        /* Navigation */
-        nav { background: #fff; padding: 15px; position: sticky; top: 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); z-index: 1000; text-align: center; }
-        nav a { margin: 0 15px; text-decoration: none; color: var(--primary); font-weight: bold; }
+        /* Top Bar for Vaishnavi */
+        .top-bar { background: var(--primary); color: white; text-align: center; padding: 10px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; }
 
-        header { background: linear-gradient(rgba(0,123,255,0.8), rgba(0,123,255,0.8)), url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=500&q=60'); background-size: cover; color: white; padding: 60px 20px; text-align: center; }
+        /* Navigation */
+        nav { background: #fff; padding: 15px; position: sticky; top: 0; box-shadow: 0 4px 10px rgba(0,0,0,0.1); z-index: 1000; display: flex; justify-content: center; align-items: center; }
+        nav a { margin: 0 15px; text-decoration: none; color: var(--primary); font-weight: bold; }
+        .enroll-highlighter { background: var(--accent); color: #000 !important; padding: 10px 20px; border-radius: 50px; border: 2px solid #000; animation: pulse 2s infinite; }
+
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+
+        header { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1000&q=80'); background-size: cover; color: white; padding: 80px 20px; text-align: center; }
         
-        .container { max-width: 1100px; margin: auto; padding: 20px; }
-        .section { background: white; padding: 30px; margin-bottom: 25px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        h2 { color: var(--primary); border-bottom: 3px solid var(--accent); display: inline-block; margin-bottom: 20px; }
+        .container { max-width: 1200px; margin: auto; padding: 20px; }
+        .section { background: white; padding: 40px; margin-bottom: 30px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
         
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        .card { background: #fff; border: 1px solid #eee; padding: 20px; border-radius: 8px; border-top: 5px solid var(--primary); }
-        
-        .badge { background: var(--accent); color: #000; padding: 5px 10px; border-radius: 5px; font-size: 0.9em; font-weight: bold; }
-        .price-tag { color: var(--secondary); font-size: 1.2em; font-weight: bold; }
-        
-        .btn { background: var(--secondary); color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px; display: inline-block; font-weight: bold; border: none; cursor: pointer; transition: 0.3s; }
-        .btn:hover { background: #218838; transform: scale(1.05); }
-        
-        .founder-box { background: #eef6ff; border-left: 10px solid var(--primary); padding: 20px; margin-top: 20px; }
-        table { width: 100%; border-collapse: collapse; }
-        table th, table td { border: 1px solid #ddd; padding: 12px; text-align: left; }
-        table th { background: var(--primary); color: white; }
+        h2 { color: var(--primary); border-left: 5px solid var(--accent); padding-left: 15px; margin-bottom: 30px; }
+
+        /* Board of Directors */
+        .board-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; text-align: center; }
+        .member-card { padding: 20px; border: 1px solid #eee; border-radius: 10px; background: #fafafa; }
+        .member-card h3 { margin: 10px 0 5px; color: var(--primary); }
+
+        /* Course Download Area */
+        .course-card { border: 1px solid #ddd; padding: 20px; border-radius: 12px; margin-bottom: 15px; position: relative; }
+        .download-btn { position: absolute; right: 20px; top: 20px; background: var(--primary); color: white; padding: 8px 15px; border-radius: 5px; text-decoration: none; font-size: 0.8em; }
+
+        /* Floating WhatsApp */
+        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; text-align: center; font-size: 30px; box-shadow: 2px 2px 10px rgba(0,0,0,0.2); z-index: 1000; line-height: 60px; }
+
+        .btn-main { background: var(--secondary); color: white; padding: 15px 30px; border-radius: 8px; text-decoration: none; display: inline-block; font-weight: bold; margin-top: 20px; }
     </style>
 </head>
 <body>
 
+<div class="top-bar">Dedicated to: Vaishnavi Chauhan</div>
+
 <nav>
     <a href="#">Home</a>
-    <a href="#courses">Courses</a>
-    <a href="#about">About Founder</a>
-    <a href="#admission">Enroll Now</a>
+    <a href="#courses">Curriculum</a>
+    <a href="#board">Leadership</a>
+    <a href="#enroll" class="enroll-highlighter">ENROLL NOW 2026-27</a>
 </nav>
 
 <header>
     <h1>NextGen Learning Hub</h1>
-    <p><span class="badge">JOB ORIENTED PROGRAM</span></p>
-    <p>Admissions Open for 2026-2027 | Start Your Career Today</p>
+    <p>A Job-Oriented Program for Future Engineers & Professionals</p>
 </header>
 
 <div class="container">
-    
-    <div class="section" style="text-align: center; border: 2px solid var(--secondary);">
-        <h2 style="color: var(--secondary);">Why Choose Us?</h2>
-        <p>Our programs are 100% **Job Oriented**. We don't just teach coding; we build careers. Get certified and ready for the industry!</p>
+
+    <div id="board" class="section">
+        <h2>Board of Directors & Management</h2>
+        <div class="board-grid">
+            <div class="member-card">
+                <i class="fas fa-user-tie fa-3x"></i>
+                <h3>Shree Rajpal Singh</h3>
+                <p><strong>Director</strong><br>Retired from PWD</p>
+            </div>
+            <div class="member-card" style="border: 2px solid var(--accent);">
+                <i class="fas fa-user-graduate fa-3x"></i>
+                <h3>Er. Ajay Chauhan</h3>
+                <p><strong>Founder & Principal Instructor</strong><br>B.Tech (Kurukshetra University)<br>Teacher at The New Height School, Kairana</p>
+            </div>
+            <div class="member-card">
+                <i class="fas fa-users-cog fa-3x"></i>
+                <h3>Ankit Chauhan</h3>
+                <p><strong>HR Manager</strong></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Expertise of Er. Ajay Chauhan</h2>
+        <p>With a B.Tech degree from the prestigious **Kurukshetra University**, Engineer Ajay Chauhan brings technical excellence to the Hub. Currently working at **The New Height School, Kairana**, he bridges the gap between school education and industry requirements.</p>
+        <ul>
+            <li>Certified in Python, HTML, and CSS (Job Oriented Approach)</li>
+            <li>Advanced Certification in English Speaking (British Council Standard)</li>
+        </ul>
     </div>
 
     <div id="courses" class="section">
-        <h2>Our Specialized Courses</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Python Programming</h3>
-                <p>Data types, Loops, Functions, and Backend logic. Ideal for software development.</p>
-                <p class="price-tag">₹4000 / 6 Months</p>
-            </div>
-            <div class="card">
-                <h3>Web Dev (HTML & CSS)</h3>
-                <p>Learn to create stunning websites. Covers HTML5 structure and CSS3 modern styling.</p>
-                <p class="price-tag">₹4000 / 6 Months</p>
-            </div>
-            <div class="card">
-                <h3>English Speaking</h3>
-                <p>Fluency training, pronunciation, and personality development.</p>
-                <p class="price-tag">₹4000 / 6 Months</p>
-            </div>
-            <div class="card">
-                <h3>Computer Basics</h3>
-                <p>MS Office, Windows management, and Internet safety.</p>
-                <p class="price-tag">₹4000 / 6 Months</p>
-            </div>
+        <h2>Course Syllabus & Topics</h2>
+        <div class="course-card">
+            <a href="#" class="download-btn"><i class="fas fa-download"></i> PDF</a>
+            <h3>Python Programming</h3>
+            <p><strong>Topics:</strong> Logic Building, Data Structures, OOPs, File Handling.</p>
         </div>
-        <p style="margin-top: 15px; font-weight: bold;">* Registration Fee: ₹500 (One-time)</p>
-    </div>
-
-    <div id="about" class="section">
-        <h2>About the Founder</h2>
-        <div class="founder-box">
-            <h3>Ajay Chauhan</h3>
-            <p>A passionate educator and technology expert. Ajay Chauhan is **Certified in Python, HTML, and CSS**. He also holds a professional certification in **English Speaking from the British Council**, ensuring students receive international-standard communication training.</p>
+        <div class="course-card">
+            <a href="#" class="download-btn"><i class="fas fa-download"></i> PDF</a>
+            <h3>Web Development (HTML & CSS)</h3>
+            <p><strong>Topics:</strong> Semantic HTML, Flexbox, CSS Grid, Responsive Design.</p>
+        </div>
+        <div class="course-card">
+            <a href="#" class="download-btn"><i class="fas fa-download"></i> PDF</a>
+            <h3>English & Soft Skills</h3>
+            <p><strong>Topics:</strong> Fluency, Public Speaking, British Accent Training, Interview Prep.</p>
         </div>
     </div>
 
-    <div id="admission" class="section">
-        <h2>Enroll Now: Admission 2026-2027</h2>
-        <p>Fill the form below to start your registration (Fee: ₹500).</p>
-        <form id="regForm">
-            <input type="text" id="name" placeholder="Student Full Name" style="width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 5px;" required>
-            <select id="course" style="width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 5px;">
-                <option value="Python">Python (₹4000/6mo)</option>
-                <option value="HTML/CSS">Web Dev HTML/CSS (₹4000/6mo)</option>
-                <option value="English">English Speaking (₹4000/6mo)</option>
-                <option value="Computer">Computer Basic (₹4000/6mo)</option>
-            </select>
-            <button type="button" class="btn" onclick="sendToWhatsApp()">Start Admission Process</button>
+    <div id="enroll" class="section" style="text-align: center; background: #eef6ff;">
+        <h2>Admission 2026 - 2027</h2>
+        <p>Registration Fee: ₹500 | Course Fee: ₹4000 (6 Months)</p>
+        <form id="admissionForm">
+            <input type="text" id="sname" placeholder="Student Name" style="width: 80%; padding: 10px; margin: 10px;" required><br>
+            <button type="button" class="btn-main" onclick="startChat()">Submit Registration via WhatsApp</button>
         </form>
     </div>
 
     <div class="section" style="text-align: center;">
-        <p><strong>Address:</strong> 6S Uncha Gaon, Kairana, Shamli, UP | <strong>Call:</strong> 95285 08284</p>
-        <p>Instagram: <a href="https://instagram.com/ajay_chauhan_no_need" style="color: #e1306c;">@ajay_chauhan_no_need</a></p>
+        <p><i class="fas fa-map-marker-alt"></i> 6S Uncha Gaon, Kairana, Shamli, Uttar Pradesh</p>
+        <p><i class="fas fa-envelope"></i> ajaychauhan00444@gmail.com | <i class="fas fa-phone"></i> 9528508284</p>
+        <p>Instagram: <a href="https://instagram.com/ajay_chauhan_no_need">@ajay_chauhan_no_need</a></p>
     </div>
+
 </div>
 
+<a href="https://wa.me/919528508284?text=Hello Er. Ajay Chauhan, I want to inquire about NextGen Hub." class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
 <script>
-    function sendToWhatsApp() {
-        const name = document.getElementById('name').value;
-        const course = document.getElementById('course').value;
-        const message = `Hello Ajay Sir, I want to Enroll in the Job Oriented Program (2026-27).%0A%0A*Name:* ${name}%0A*Selected Course:* ${course}%0A*Reg Fee:* Paid/Pending`;
-        window.open(`https://wa.me/919528508284?text=${message}`, '_blank');
+    function startChat() {
+        const name = document.getElementById('sname').value;
+        const msg = `Hello Er. Ajay Chauhan,%0A%0AStudent Name: ${name}%0AApplication for 2026-27 Session.%0ADirector: Shree Rajpal Singh Ji.`;
+        window.open(`https://wa.me/919528508284?text=${msg}`, '_blank');
     }
 </script>
 

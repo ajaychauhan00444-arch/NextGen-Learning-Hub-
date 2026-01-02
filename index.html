@@ -3,95 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NextGen Learning Hub | Admissions 2026-2027</title>
+    <title>NextGen Learning Hub | Ajay Chauhan</title>
     <style>
-        :root { --primary: #007bff; --secondary: #28a745; --dark: #333; --light: #f4f4f4; }
-        body { font-family: 'Segoe UI', sans-serif; margin: 0; line-height: 1.6; background: var(--light); color: var(--dark); }
-        header { background: var(--primary); color: white; padding: 40px 20px; text-align: center; }
+        :root { --primary: #007bff; --secondary: #28a745; --dark: #333; --light: #f4f4f4; --accent: #ffc107; }
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; line-height: 1.6; background: var(--light); color: var(--dark); scroll-behavior: smooth; }
+        
+        /* Navigation */
+        nav { background: #fff; padding: 15px; position: sticky; top: 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); z-index: 1000; text-align: center; }
+        nav a { margin: 0 15px; text-decoration: none; color: var(--primary); font-weight: bold; }
+
+        header { background: linear-gradient(rgba(0,123,255,0.8), rgba(0,123,255,0.8)), url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=500&q=60'); background-size: cover; color: white; padding: 60px 20px; text-align: center; }
+        
         .container { max-width: 1100px; margin: auto; padding: 20px; }
-        .section { background: white; padding: 25px; margin-bottom: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        h2 { color: var(--primary); border-bottom: 2px solid var(--primary); display: inline-block; margin-bottom: 20px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-        .card { background: #fff; border: 1px solid #ddd; padding: 15px; border-radius: 8px; }
-        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
-        table th, table td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        .section { background: white; padding: 30px; margin-bottom: 25px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        h2 { color: var(--primary); border-bottom: 3px solid var(--accent); display: inline-block; margin-bottom: 20px; }
+        
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .card { background: #fff; border: 1px solid #eee; padding: 20px; border-radius: 8px; border-top: 5px solid var(--primary); }
+        
+        .badge { background: var(--accent); color: #000; padding: 5px 10px; border-radius: 5px; font-size: 0.9em; font-weight: bold; }
+        .price-tag { color: var(--secondary); font-size: 1.2em; font-weight: bold; }
+        
+        .btn { background: var(--secondary); color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px; display: inline-block; font-weight: bold; border: none; cursor: pointer; transition: 0.3s; }
+        .btn:hover { background: #218838; transform: scale(1.05); }
+        
+        .founder-box { background: #eef6ff; border-left: 10px solid var(--primary); padding: 20px; margin-top: 20px; }
+        table { width: 100%; border-collapse: collapse; }
+        table th, table td { border: 1px solid #ddd; padding: 12px; text-align: left; }
         table th { background: var(--primary); color: white; }
-        .btn { background: var(--secondary); color: white; padding: 12px 20px; text-decoration: none; border-radius: 5px; display: inline-block; font-weight: bold; border: none; cursor: pointer; }
-        .insta-link { color: #e1306c; font-weight: bold; text-decoration: none; }
-        input, select, textarea { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 5px; }
     </style>
 </head>
 <body>
 
+<nav>
+    <a href="#">Home</a>
+    <a href="#courses">Courses</a>
+    <a href="#about">About Founder</a>
+    <a href="#admission">Enroll Now</a>
+</nav>
+
 <header>
     <h1>NextGen Learning Hub</h1>
-    <p>Admissions Open for Academic Session 2026-2027</p>
+    <p><span class="badge">JOB ORIENTED PROGRAM</span></p>
+    <p>Admissions Open for 2026-2027 | Start Your Career Today</p>
 </header>
 
 <div class="container">
-    <div class="grid">
-        <div class="section">
-            <h2>Our Vision</h2>
-            <p>To be a premier <strong>Learning Hub</strong> that empowers students with modern technical skills and practical knowledge for a bright future.</p>
-        </div>
-        <div class="section">
-            <h2>Our Mission</h2>
-            <p>As a dedicated <strong>Education Centre</strong>, our mission is to provide high-quality training in coding, languages, and professional skills to every student.</p>
-        </div>
+    
+    <div class="section" style="text-align: center; border: 2px solid var(--secondary);">
+        <h2 style="color: var(--secondary);">Why Choose Us?</h2>
+        <p>Our programs are 100% **Job Oriented**. We don't just teach coding; we build careers. Get certified and ready for the industry!</p>
     </div>
 
-    <div class="section">
-        <h2>What You Will Learn</h2>
+    <div id="courses" class="section">
+        <h2>Our Specialized Courses</h2>
         <div class="grid">
             <div class="card">
-                <h3>Programming (Python/HTML/CSS)</h3>
-                <p>From the basics of logic to building real-world websites. Master Python for data and HTML/CSS for web design.</p>
+                <h3>Python Programming</h3>
+                <p>Data types, Loops, Functions, and Backend logic. Ideal for software development.</p>
+                <p class="price-tag">₹4000 / 6 Months</p>
+            </div>
+            <div class="card">
+                <h3>Web Dev (HTML & CSS)</h3>
+                <p>Learn to create stunning websites. Covers HTML5 structure and CSS3 modern styling.</p>
+                <p class="price-tag">₹4000 / 6 Months</p>
             </div>
             <div class="card">
                 <h3>English Speaking</h3>
-                <p>Improve your communication skills, grammar, and confidence for professional interviews and daily life.</p>
+                <p>Fluency training, pronunciation, and personality development.</p>
+                <p class="price-tag">₹4000 / 6 Months</p>
             </div>
             <div class="card">
                 <h3>Computer Basics</h3>
-                <p>Essential skills including MS Office, Internet usage, and digital literacy for everyone.</p>
+                <p>MS Office, Windows management, and Internet safety.</p>
+                <p class="price-tag">₹4000 / 6 Months</p>
             </div>
+        </div>
+        <p style="margin-top: 15px; font-weight: bold;">* Registration Fee: ₹500 (One-time)</p>
+    </div>
+
+    <div id="about" class="section">
+        <h2>About the Founder</h2>
+        <div class="founder-box">
+            <h3>Ajay Chauhan</h3>
+            <p>A passionate educator and technology expert. Ajay Chauhan is **Certified in Python, HTML, and CSS**. He also holds a professional certification in **English Speaking from the British Council**, ensuring students receive international-standard communication training.</p>
         </div>
     </div>
 
-    <div class="section">
-        <h2>Class Schedule (2:00 PM - 8:00 PM)</h2>
-        <table>
-            <tr><th>Time</th><th>Class Subject</th></tr>
-            <tr><td>02:00 PM - 03:00 PM</td><td>Python Programming</td></tr>
-            <tr><td>03:00 PM - 04:00 PM</td><td>HTML Web Design</td></tr>
-            <tr><td>04:00 PM - 05:00 PM</td><td>CSS Styling</td></tr>
-            <tr><td>05:00 PM - 06:00 PM</td><td>English Speaking</td></tr>
-            <tr><td>06:00 PM - 08:00 PM</td><td>Computer Basics</td></tr>
-        </table>
-    </div>
-
-    <div class="section">
-        <h2>Student Registration 2026-2027</h2>
+    <div id="admission" class="section">
+        <h2>Enroll Now: Admission 2026-2027</h2>
+        <p>Fill the form below to start your registration (Fee: ₹500).</p>
         <form id="regForm">
-            <input type="text" id="name" placeholder="Student Full Name" required>
-            <select id="course">
-                <option value="Python">Python Class</option>
-                <option value="Web Development">Web Development (HTML/CSS)</option>
-                <option value="English Speaking">English Speaking</option>
-                <option value="Computer Basic">Computer Basic</option>
+            <input type="text" id="name" placeholder="Student Full Name" style="width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 5px;" required>
+            <select id="course" style="width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 5px;">
+                <option value="Python">Python (₹4000/6mo)</option>
+                <option value="HTML/CSS">Web Dev HTML/CSS (₹4000/6mo)</option>
+                <option value="English">English Speaking (₹4000/6mo)</option>
+                <option value="Computer">Computer Basic (₹4000/6mo)</option>
             </select>
-            <input type="tel" id="phone" placeholder="Your WhatsApp Number" required>
-            <button type="button" class="btn" onclick="sendToWhatsApp()">Submit & Register via WhatsApp</button>
+            <button type="button" class="btn" onclick="sendToWhatsApp()">Start Admission Process</button>
         </form>
     </div>
 
     <div class="section" style="text-align: center;">
-        <h2>Contact Us</h2>
-        <p><strong>Founder:</strong> Ajay Chauhan</p>
-        <p><strong>Address:</strong> 6S Uncha Gaon, Kairana, Shamli, Uttar Pradesh</p>
-        <p><strong>Email:</strong> ajaychauhan00444@gmail.com</p>
-        <p><strong>Call:</strong> 95285 08284 | <strong>Alt:</strong> 9997655195</p>
-        <p>Follow us on Instagram: <a href="https://instagram.com/ajay_chauhan_no_need" class="insta-link">@ajay_chauhan_no_need</a></p>
+        <p><strong>Address:</strong> 6S Uncha Gaon, Kairana, Shamli, UP | <strong>Call:</strong> 95285 08284</p>
+        <p>Instagram: <a href="https://instagram.com/ajay_chauhan_no_need" style="color: #e1306c;">@ajay_chauhan_no_need</a></p>
     </div>
 </div>
 
@@ -99,12 +115,8 @@
     function sendToWhatsApp() {
         const name = document.getElementById('name').value;
         const course = document.getElementById('course').value;
-        const phone = document.getElementById('phone').value;
-        
-        const message = `Hello Ajay Sir, I want to register for Admission 2026-2027.%0A%0A*Name:* ${name}%0A*Course:* ${course}%0A*Contact:* ${phone}`;
-        const whatsappUrl = `https://wa.me/919528508284?text=${message}`;
-        
-        window.open(whatsappUrl, '_blank');
+        const message = `Hello Ajay Sir, I want to Enroll in the Job Oriented Program (2026-27).%0A%0A*Name:* ${name}%0A*Selected Course:* ${course}%0A*Reg Fee:* Paid/Pending`;
+        window.open(`https://wa.me/919528508284?text=${message}`, '_blank');
     }
 </script>
 

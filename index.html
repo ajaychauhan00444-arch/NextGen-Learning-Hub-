@@ -6,122 +6,158 @@
     <title>NextGen Learning Hub | Er. Ajay Chauhan</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root { --primary: #003366; --secondary: #28a745; --accent: #ffcc00; --light: #f8f9fa; }
-        body { font-family: 'Poppins', sans-serif; margin: 0; background: var(--light); color: #333; scroll-behavior: smooth; }
+        :root { --primary: #002347; --secondary: #28a745; --accent: #ffcc00; --text: #333; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background: #f4f7f6; color: var(--text); scroll-behavior: smooth; }
         
-        /* Top Banner for Vaishnavi */
-        .vaishnavi-banner { background: var(--primary); color: white; text-align: center; padding: 12px; font-weight: bold; font-size: 1.1em; letter-spacing: 1px; border-bottom: 4px solid var(--accent); }
+        /* Vaishnavi Dedicated Banner */
+        .top-banner { background: var(--primary); color: white; text-align: center; padding: 10px; font-weight: bold; border-bottom: 3px solid var(--accent); }
 
-        nav { background: #fff; padding: 15px; position: sticky; top: 0; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000; display: flex; justify-content: center; gap: 20px; }
-        nav a { text-decoration: none; color: var(--primary); font-weight: 700; font-size: 0.9em; }
-        .enroll-btn { background: var(--accent); padding: 8px 15px; border-radius: 20px; color: #000; animation: blink 1.5s infinite; }
+        nav { background: #fff; padding: 15px; position: sticky; top: 0; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+        nav a { text-decoration: none; color: var(--primary); font-weight: 700; font-size: 0.9em; transition: 0.3s; }
+        nav a:hover { color: var(--secondary); }
+        .enroll-blink { background: var(--accent); color: #000; padding: 8px 18px; border-radius: 25px; animation: blinker 1.5s linear infinite; }
+        @keyframes blinker { 50% { opacity: 0.5; } }
 
-        @keyframes blink { 0% { opacity: 1; } 50% { opacity: 0.7; } 100% { opacity: 1; } }
-
-        header { background: linear-gradient(rgba(0,51,102,0.85), rgba(0,51,102,0.85)), url('https://i.ibb.co/LzhYm3m/classroom.jpg'); background-size: cover; color: white; padding: 60px 20px; text-align: center; }
+        header { background: linear-gradient(rgba(0,35,71,0.8), rgba(0,35,71,0.8)), url('https://i.ibb.co/LzhYm3m/classroom.jpg'); background-size: cover; background-position: center; color: white; padding: 100px 20px; text-align: center; }
         
-        .container { max-width: 1100px; margin: auto; padding: 20px; }
-        .section { background: white; padding: 30px; margin-bottom: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .container { max-width: 1200px; margin: auto; padding: 20px; }
+        .section { background: white; padding: 40px; margin-bottom: 30px; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.05); }
+        h2 { color: var(--primary); font-size: 2em; text-align: center; margin-bottom: 30px; border-bottom: 4px solid var(--accent); display: inline-block; }
 
-        /* Faculty/Leadership Styling */
-        .profile-card { text-align: center; padding: 20px; border: 1px solid #eee; border-radius: 15px; background: #fff; transition: 0.3s; }
-        .profile-card:hover { transform: translateY(-10px); }
-        .profile-img { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 4px solid var(--primary); margin-bottom: 15px; }
+        /* Profile Section */
+        .profile-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 20px; }
+        .card { text-align: center; border: 1px solid #eee; padding: 25px; border-radius: 15px; transition: 0.4s; }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+        .founder-img { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; border: 5px solid var(--accent); margin-bottom: 15px; }
 
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
-        
-        .course-box { border-left: 5px solid var(--primary); padding: 15px; background: #f0f4f8; border-radius: 0 10px 10px 0; margin-bottom: 10px; }
-        
-        /* Floating Buttons */
-        .float-wa { position: fixed; bottom: 20px; right: 20px; background: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; text-align: center; font-size: 30px; line-height: 60px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 1000; }
+        /* Deep Course Content */
+        .course-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 20px; }
+        .course-card { background: #f9fbfd; border-left: 6px solid var(--primary); padding: 20px; border-radius: 10px; }
+        .course-card ul { padding-left: 20px; font-size: 0.95em; color: #555; }
+        .price-badge { background: var(--secondary); color: white; padding: 4px 10px; border-radius: 4px; float: right; }
+
+        /* Social Media Icons */
+        .social-links { margin-top: 20px; font-size: 24px; }
+        .social-links a { color: white; margin: 0 15px; transition: 0.3s; }
+        .social-links a:hover { color: var(--accent); transform: scale(1.2); }
+
+        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; width: 65px; height: 65px; border-radius: 50%; text-align: center; line-height: 65px; font-size: 35px; z-index: 1000; box-shadow: 0 5px 20px rgba(0,0,0,0.3); }
     </style>
 </head>
 <body>
 
-<div class="vaishnavi-banner">
-    <i class="fas fa-heart"></i> Dedicated to My Dear Niece: Vaishnavi Chauhan <i class="fas fa-heart"></i>
+<div class="top-banner">
+    🌟 Dedicated to my lovely niece: VAISHNAVI CHAUHAN 🌟
 </div>
 
 <nav>
     <a href="#">HOME</a>
-    <a href="#about">FOUNDER</a>
-    <a href="#courses">COURSES</a>
-    <a href="#enroll" class="enroll-btn">ADMISSION 2026-27</a>
+    <a href="#about">THE FOUNDER</a>
+    <a href="#syllabus">COURSE SYLLABUS</a>
+    <a href="#enroll" class="enroll-blink">ENROLL NOW 2026-27</a>
 </nav>
 
 <header>
     <h1>NextGen Learning Hub</h1>
-    <p>Empowering Students with Tech & Language Skills</p>
-    <div style="margin-top:20px;">
-        <span style="background:var(--accent); color:#000; padding:5px 15px; border-radius:5px; font-weight:bold;">100% JOB ORIENTED PROGRAM</span>
-    </div>
+    <p>Professional Education Center for Engineering, Coding & Language Mastery</p>
+    <p><strong>Status:</strong> Job-Oriented Industry Training Program</p>
 </header>
 
 <div class="container">
 
-    <div class="section" id="about">
-        <h2 style="text-align:center; color:var(--primary);">Leadership Team</h2>
-        <div class="grid">
-            <div class="profile-card">
-                <i class="fas fa-user-tie fa-5x" style="color:#ccc; margin-bottom:15px;"></i>
+    <div class="section" id="about" style="text-align:center;">
+        <h2>The Leadership Team</h2>
+        <div class="profile-grid">
+            <div class="card">
+                <i class="fas fa-user-tie fa-5x" style="color:#003366; margin-bottom:15px;"></i>
                 <h3>Shree Rajpal Singh</h3>
-                <p><strong>Director</strong><br>Retired from PWD</p>
+                <p><strong>Director</strong><br>Retired from PWD, Govt of UP</p>
             </div>
-            <div class="profile-card" style="border: 2px solid var(--accent);">
-                <img src="https://i.ibb.co/VqC6R8V/ajay-chauhan.jpg" class="profile-img" alt="Er. Ajay Chauhan">
+            <div class="card" style="border: 2px solid var(--accent);">
+                <img src="https://i.ibb.co/VqC6R8V/ajay-chauhan.jpg" class="founder-img" alt="Er. Ajay Chauhan">
                 <h3>Er. Ajay Chauhan</h3>
                 <p><strong>Founder & Principal Instructor</strong><br>B.Tech (Kurukshetra University)<br>Teacher at The New Height School, Kairana</p>
+                <p style="font-size: 0.9em; font-style: italic;">"Certified Specialist in Python, Web Tech & British English Training"</p>
             </div>
-            <div class="profile-card">
-                <i class="fas fa-user fa-5x" style="color:#ccc; margin-bottom:15px;"></i>
+            <div class="card">
+                <i class="fas fa-id-badge fa-5x" style="color:#003366; margin-bottom:15px;"></i>
                 <h3>Ankit Chauhan</h3>
-                <p><strong>HR Manager</strong></p>
+                <p><strong>HR Manager</strong><br>Operations & Student Relations</p>
             </div>
         </div>
     </div>
 
-    <div class="section">
-        <h2>Expertise & Credentials</h2>
-        <p>Engineer Ajay Chauhan is a certified professional dedicated to quality education. With a background from **Kurukshetra University** and active teaching experience at **The New Height School**, he ensures that every student gets individual attention.</p>
-        <div class="grid">
-            <div style="background:#e8f4fd; padding:15px; border-radius:10px;">
-                <h4><i class="fas fa-certificate"></i> Certifications</h4>
-                <p>Python, HTML, CSS & British Council English Speaking Standards.</p>
+    <div class="section" id="syllabus">
+        <h2 style="display:block;">Advanced Job-Oriented Curriculum</h2>
+        <div class="course-grid">
+            
+            <div class="course-card">
+                <span class="price-badge">₹4000/6Mo</span>
+                <h4><i class="fas fa-code"></i> Python Programming (Full Stack Prep)</h4>
+                <ul>
+                    <li><strong>Basics:</strong> Variables, Data Types (Lists, Tuples, Dictionaries)</li>
+                    <li><strong>Control Flow:</strong> Loops, Conditional Statements, Error Handling</li>
+                    <li><strong>Advanced:</strong> Object-Oriented Programming (OOPs), Modules, APIs</li>
+                    <li><strong>Live Project:</strong> Building automated scripts and logic tools</li>
+                </ul>
             </div>
-            <div style="background:#e8f4fd; padding:15px; border-radius:10px;">
-                <h4><i class="fas fa-graduation-cap"></i> Methodology</h4>
-                <p>Interactive sessions with practical lab work (as seen in our classroom photos).</p>
-            </div>
-        </div>
-    </div>
 
-    <div class="section" id="courses">
-        <h2>Course Details (6 Months Each)</h2>
-        <div class="course-box">
-            <h4>Python Programming (Job Oriented)</h4>
-            <p>Topics: Basics to Advanced Logic, Data Structures, OOPs. <br><strong>Fee: ₹4000</strong></p>
+            <div class="course-card">
+                <span class="price-badge">₹4000/6Mo</span>
+                <h4><i class="fas fa-globe"></i> Web Development (HTML5 & CSS3)</h4>
+                <ul>
+                    <li><strong>HTML5:</strong> Semantic tags, Forms, Media integration</li>
+                    <li><strong>CSS3:</strong> Flexbox, Grid, Animations, Responsive Design</li>
+                    <li><strong>UI/UX:</strong> User experience principles and Modern Layouts</li>
+                    <li><strong>Deliverable:</strong> Your own Professional Portfolio Website</li>
+                </ul>
+            </div>
+
+            <div class="course-card">
+                <span class="price-badge">₹4000/6Mo</span>
+                <h4><i class="fas fa-comments"></i> Professional English Speaking</h4>
+                <ul>
+                    <li><strong>Fluency:</strong> Pronunciation & Accent Improvement</li>
+                    <li><strong>Grammar:</strong> Advanced sentence structures for business</li>
+                    <li><strong>Soft Skills:</strong> Interview preparation & Public speaking</li>
+                    <li><strong>Standard:</strong> British Council English training modules</li>
+                </ul>
+            </div>
+
+            <div class="course-card">
+                <span class="price-badge">₹4000/6Mo</span>
+                <h4><i class="fas fa-desktop"></i> Computer Basics & Office Suite</h4>
+                <ul>
+                    <li><strong>OS:</strong> Advanced Windows usage & File Management</li>
+                    <li><strong>Office:</strong> MS Word, Excel (Data formulas), PowerPoint</li>
+                    <li><strong>Internet:</strong> Cyber Security, Emails, Professional Cloud tools</li>
+                </ul>
+            </div>
+
         </div>
-        <div class="course-box">
-            <h4>Web Development (HTML/CSS)</h4>
-            <p>Topics: Responsive Design, Modern UI, Portfolio Building. <br><strong>Fee: ₹4000</strong></p>
-        </div>
-        <div class="course-box">
-            <h4>English Speaking</h4>
-            <p>Topics: British Accent, Public Speaking, Grammar, Personality Development. <br><strong>Fee: ₹4000</strong></p>
-        </div>
-        <p style="color:red; font-weight:bold;">* One-time Registration Fee: ₹500</p>
+        <p style="margin-top:20px; font-weight:bold; color:red;">* Registration Fee: ₹500 | Duration: 6 Months per course</p>
     </div>
 
 </div>
 
-<a href="https://wa.me/919528508284?text=Hello Er. Ajay Chauhan, I want to join NextGen Hub." class="float-wa">
+<footer style="background:var(--primary); color:white; text-align:center; padding:50px 20px;">
+    <h3>Connect with Er. Ajay Chauhan</h3>
+    <div class="social-links">
+        <a href="https://instagram.com/ajay_chauhan_no_need" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://twitter.com/" target="_blank"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://pinterest.com/" target="_blank"><i class="fab fa-pinterest"></i></a>
+        <a href="https://linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
+    </div>
+    <hr style="width:50%; margin:20px auto; opacity:0.3;">
+    <p><i class="fas fa-map-marker-alt"></i> 6S Uncha Gaon, Kairana, Shamli, Uttar Pradesh</p>
+    <p><i class="fas fa-envelope"></i> ajaychauhan00444@gmail.com | <i class="fas fa-phone"></i> +91 95285 08284</p>
+    <p style="font-size:0.8em; opacity:0.6;">© 2026 NextGen Learning Hub. All rights reserved.</p>
+</footer>
+
+<a href="https://wa.me/919528508284?text=Hello Er. Ajay Chauhan, I am interested in NextGen Hub courses." class="whatsapp-float" target="_blank">
     <i class="fab fa-whatsapp"></i>
 </a>
-
-<footer style="background:var(--primary); color:white; text-align:center; padding:30px; margin-top:50px;">
-    <p>NextGen Learning Hub | 6S Uncha Gaon, Kairana, Shamli, UP</p>
-    <p>Contact: 95285 08284 | Email: ajaychauhan00444@gmail.com</p>
-</footer>
 
 </body>
 </html>

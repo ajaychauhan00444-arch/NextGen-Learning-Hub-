@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ajay & Tanisha</title>
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, sans-serif;
+        background: linear-gradient(135deg, #fff5f7 0%, #ffe4e1 100%);
+        text-align: center;
+        padding: 20px;
+        margin: 0;
+    }
+
+    /* Logo Section */
+    .logo-wrapper { margin-top: 20px; margin-bottom: 40px; }
+    
+    .logo-container {
+        display: inline-block;
+        border: 4px solid #c71585;
+        padding: 6px;
+    }
+
+    .inner-logo {
+        background: #c71585;
+        color: white;
+        padding: 15px 45px;
+        font-size: 26px;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    .rel-date {
+        display: block;
+        margin-top: 10px;
+        font-weight: bold;
+        color: #c71585;
+        font-size: 18px;
+        letter-spacing: 1px;
+    }
+
+    /* Questions Card */
+    .questions-card {
+        max-width: 600px;
+        margin: 0 auto 60px;
+        background: white;
+        padding: 30px;
+        border-radius: 35px;
+        box-shadow: 0 20px 50px rgba(199, 21, 133, 0.15);
+        text-align: left;
+    }
+
+    .card-header {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .card-header h2 { color: #c71585; margin-bottom: 5px; }
+    .card-header p { color: #ff69b4; font-weight: 500; font-size: 16px; line-height: 1.4; }
+
+    .question-block {
+        margin-bottom: 35px;
+        border-bottom: 1px solid #fce4ec;
+        padding-bottom: 20px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 15px;
+        font-weight: 700;
+        color: #c71585;
+        font-size: 16px;
+    }
+
+    .options-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .opt-btn {
+        background: #fffafa;
+        border: 2px solid #fce4ec;
+        padding: 12px;
+        border-radius: 15px;
+        cursor: pointer;
+        font-size: 13px;
+        transition: 0.3s all ease;
+        text-align: center;
+        font-weight: 500;
+    }
+
+    .opt-btn.active {
+        background: #ff1493 !important;
+        color: white !important;
+        border-color: #c71585 !important;
+        transform: scale(1.05);
+        box-shadow: 0 5px 15px rgba(255, 20, 147, 0.3);
+    }
+
+    .love-box {
+        background: #fff0f5;
+        padding: 30px;
+        border-radius: 25px;
+        text-align: center;
+        margin-top: 40px;
+    }
+
+    .choice-btn {
+        padding: 15px 40px;
+        border: none;
+        border-radius: 50px;
+        font-weight: bold;
+        cursor: pointer;
+        font-size: 18px;
+        margin: 10px;
+        transition: 0.3s;
+    }
+
+    .yes { background: #4caf50; color: white; }
+    .no { background: #f44336; color: white; }
+
+    #success-screen {
+        display: none;
+        position: fixed;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background: rgba(255, 255, 255, 0.98);
+        z-index: 1000;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .success-text {
+        font-size: 26px;
+        color: #c71585;
+        font-weight: bold;
+        text-align: center;
+        line-height: 1.5;
+        padding: 0 20px;
+    }
+
+    .submit-btn {
+        background: linear-gradient(to right, #c71585, #ff1493);
+        color: white;
+        padding: 22px;
+        border: none;
+        border-radius: 20px;
+        font-size: 20px;
+        font-weight: bold;
+        width: 100%;
+        margin-top: 30px;
+        cursor: pointer;
+        box-shadow: 0 10px 20px rgba(199, 21, 133, 0.3);
+    }
+</style>
+</head>
+<body>
+
+    <div id="success-screen">
+        <div class="success-text">Thank you so much, Tanisha! 💕<br>You’re amazing!</div>
+        <p style="color: #666; margin-top: 15px;">Sharing your feelings with Ajay Chauhan...</p>
+    </div>
+
+    <div class="logo-wrapper">
+        <div class="logo-container">
+            <div class="inner-logo">AJAY & TANISHA</div>
+        </div>
+        <div class="rel-date">29 January, 2026</div>
+    </div>
+
+    <div class="questions-card">
+        <div class="card-header">
+            <h2>Hello Tanisha Nagar! 🌸</h2>
+            <p>Feeling happy today? Answer these fun questions for me! 💕</p>
+        </div>
+
+        <form id="loveForm">
+            <div class="question-block">
+                <label>1. What do you like the most?</label>
+                <div class="options-grid" data-q="1">
+                    <div class="opt-btn">Long Drives 🚗</div><div class="opt-btn">Deep Talks 💬</div>
+                    <div class="opt-btn">Shopping 🛍️</div><div class="opt-btn">Sleeping 😴</div>
+                    <div class="opt-btn">Traveling ✈️</div><div class="opt-btn">Eating 🍕</div>
+                    <div class="opt-btn">Nature 🌿</div><div class="opt-btn">Reading 📖</div>
+                    <div class="opt-btn">Family Time 🏠</div><div class="opt-btn">Everything! ✨</div>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <label>2. What do you dislike?</label>
+                <div class="options-grid" data-q="2">
+                    <div class="opt-btn">Lies 🤥</div><div class="opt-btn">Ignorance 📵</div>
+                    <div class="opt-btn">Rudeness 😤</div><div class="opt-btn">Fake People 🤡</div>
+                    <div class="opt-btn">Waiting 🕒</div><div class="opt-btn">Arguments ⛈️</div>
+                    <div class="opt-btn">Crowded Places 👨‍👩‍👦</div><div class="opt-btn">Being Alone 🥺</div>
+                    <div class="opt-btn">Loud Noises 📢</div><div class="opt-btn">Spicy Food 🌶️</div>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <label>3. What's your favorite hobby?</label>
+                <div class="options-grid" data-q="3">
+                    <div class="opt-btn">Dancing 💃</div><div class="opt-btn">Singing 🎤</div>
+                    <div class="opt-btn">Cooking 🍳</div><div class="opt-btn">Painting 🎨</div>
+                    <div class="opt-btn">Gymming 🏋️‍♀️</div><div class="opt-btn">Photography 📸</div>
+                    <div class="opt-btn">Reels Making 📱</div><div class="opt-btn">Sleeping 😴</div>
+                    <div class="opt-btn">Listening Music 🎵</div><div class="opt-btn">Writing ✍️</div>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <label>4. What's your dream?</label>
+                <div class="options-grid" data-q="4">
+                    <div class="opt-btn">Successful Career 💼</div><div class="opt-btn">World Tour 🌍</div>
+                    <div class="opt-btn">Helping Others 🤝</div><div class="opt-btn">Being Famous 🌟</div>
+                    <div class="opt-btn">Luxury Life 💎</div><div class="opt-btn">Happy Family 👨‍👩‍👧</div>
+                    <div class="opt-btn">True Love ❤️</div><div class="opt-btn">Peace of Mind 🧘‍♀️</div>
+                    <div class="opt-btn">Independent Life 🗽</div><div class="opt-btn">Making Parents Proud 💖</div>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <label>5. What's your favorite food?</label>
+                <div class="options-grid" data-q="5">
+                    <div class="opt-btn">Pizza 🍕</div><div class="opt-btn">Pasta 🍝</div>
+                    <div class="opt-btn">Biryani 🥘</div><div class="opt-btn">Paneer 🧀</div>
+                    <div class="opt-btn">Golgappa 😋</div><div class="opt-btn">Chinese 🍜</div>
+                    <div class="opt-btn">Burger 🍔</div><div class="opt-btn">Ice Cream 🍦</div>
+                    <div class="opt-btn">Chocolates 🍫</div><div class="opt-btn">Home Food 🏠</div>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <label>6. What's your favorite type of shoes?</label>
+                <div class="options-grid" data-q="6">
+                    <div class="opt-btn">Sneakers 👟</div><div class="opt-btn">Heels 👠</div>
+                    <div class="opt-btn">Flats 🥿</div><div class="opt-btn">Boots 👢</div>
+                    <div class="opt-btn">Jordans 🏀</div><div class="opt-btn">Crocs 🐊</div>
+                    <div class="opt-btn">Sandals 👡</div><div class="opt-btn">Canvas 👟</div>
+                    <div class="opt-btn">Slippers 🩴</div><div class="opt-btn">Formal Shoes 👞</div>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <label>7. Which clothes do you love wearing most?</label>
+                <div class="options-grid" data-q="7">
+                    <div class="opt-btn">Suit 👗</div><div class="opt-btn">Saree 🥻</div>
+                    <div class="opt-btn">Jeans Top 👖</div><div class="opt-btn">Dresses 👗</div>
+                    <div class="opt-btn">Hoodies 🧥</div><div class="opt-btn">Co-ord Sets ✨</div>
+                    <div class="opt-btn">Lehenga 💃</div><div class="opt-btn">Pajamas 🛌</div>
+                    <div class="opt-btn">Oversized Tee 👕</div><div class="opt-btn">Skirts 👗</div>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <label>8. What's your favorite color to wear?</label>
+                <div class="options-grid" data-q="8">
+                    <div class="opt-btn">Black 🖤</div><div class="opt-btn">White 🤍</div>
+                    <div class="opt-btn">Red ❤️</div><div class="opt-btn">Pink 💖</div>
+                    <div class="opt-btn">Lavender 💜</div><div class="opt-btn">Blue 💙</div>
+                    <div class="opt-btn">Yellow 💛</div><div class="opt-btn">Green 💚</div>
+                    <div class="opt-btn">Peach 🍑</div><div class="opt-btn">Wine 🍷</div>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <label>9. What's your favorite travel destination?</label>
+                <div class="options-grid" data-q="9">
+                    <div class="opt-btn">Paris 🗼</div><div class="opt-btn">Maldives 🏝️</div>
+                    <div class="opt-btn">Switzerland 🏔️</div><div class="opt-btn">Dubai 🏙️</div>
+                    <div class="opt-btn">Kedarnath 🙏</div><div class="opt-btn">Goa 🏖️</div>
+                    <div class="opt-btn">Manali ❄️</div><div class="opt-btn">London 🇬🇧</div>
+                    <div class="opt-btn">Bali 🥥</div><div class="opt-btn">Ladakh 🏍️</div>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <label>10. Mountains or beaches?</label>
+                <div class="options-grid" data-q="10">
+                    <div class="opt-btn">Mountains ⛰️</div><div class="opt-btn">Beaches 🏖️</div>
+                    <div class="opt-btn">Both 🏔️🏖️</div><div class="opt-btn">Neither 🏠</div>
+                    <div class="opt-btn">Silent Forest 🌲</div><div class="opt-btn">Snowy Peaks ❄️</div>
+                    <div class="opt-btn">Lakes 🌊</div><div class="opt-btn">Desert 🏜️</div>
+                    <div class="opt-btn">Farmhouse 🏡</div><div class="opt-btn">Road Trip 🚗</div>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <label>11. What's your favorite music?</label>
+                <div class="options-grid" data-q="11">
+                    <div class="opt-btn">Romantic 🥰</div><div class="opt-btn">Sad 🥺</div>
+                    <div class="opt-btn">Punjabi 🎶</div><div class="opt-btn">Pop 🎤</div>
+                    <div class="opt-btn">Old Songs 📻</div><div class="opt-btn">Hip Hop 🕺</div>
+                    <div class="opt-btn">Lo-fi 🎧</div><div class="opt-btn">Party Mix 🥳</div>
+                    <div class="opt-btn">Sufi 🧘‍♀️</div><div class="opt-btn">Rap 🎙️</div>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <label>12. Favorite movie or TV show genre?</label>
+                <div class="options-grid" data-q="12">
+                    <div class="opt-btn">Romantic 💖</div><div class="opt-btn">Horror 👻</div>
+                    <div class="opt-btn">Comedy 😂</div><div class="opt-btn">Action 💥</div>
+                    <div class="opt-btn">Web Series 💻</div><div class="opt-btn">K-Drama 🇰🇷</div>
+                    <div class="opt-btn">Sci-Fi 🚀</div><div class="opt-btn">Thriller 🕵️‍♀️</div>
+                    <div class="opt-btn">Reality Shows 📺</div><div class="opt-btn">Anime ⛩️</div>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <label>13. Do you like pets? If yes, which one?</label>
+                <div class="options-grid" data-q="13">
+                    <div class="opt-btn">Dog 🐶</div><div class="opt-btn">Cat 🐱</div>
+                    <div class="opt-btn">Rabbit 🐰</div><div class="opt-btn">Birds 🐦</div>
+                    <div class="opt-btn">Panda 🐼</div><div class="opt-btn">All 🐾</div>
+                    <div class="opt-btn">Scared of them! 😅</div><div class="opt-btn">Puppy 🐾</div>
+                    <div class="opt-btn">White Kitten 🐈</div><div class="opt-btn">Not really 🚫</div>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <label>14. What's your idea of a fun day?</label>
+                <div class="options-grid" data-q="14">
+                    <div class="opt-btn">Movie Date 🎥</div><div class="opt-btn">Picnic 🧺</div>
+                    <div class="opt-btn">Gaming 🎮</div><div class="opt-btn">Cooking together 👩‍🍳</div>
+                    <div class="opt-btn">Long Drive 🚗</div><div class="opt-btn">Late Night Walk 🌙</div>
+                    <div class="opt-btn">Party 🍻</div><div class="opt-btn">Shopping 🛍️</div>
+                    <div class="opt-btn">Adventure 🎢</div><div class="opt-btn">Staying In Bed 🛌</div>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <label>15. What would you like a boy to do to make you happy?</label>
+                <div class="options-grid" data-q="15">
+                    <div class="opt-btn">Respect 🤝</div><div class="opt-btn">Loyalty 💍</div>
+                    <div class="opt-btn">Cooking for me 🍳</div><div class="opt-btn">Gift me flowers 💐</div>
+                    <div class="opt-btn">Listen to me 👂</div><div class="opt-btn">Surprises 🎁</div>
+                    <div class="opt-btn">Quality Time ⏰</div><div class="opt-btn">Make me laugh 😂</div>
+                    <div class="opt-btn">Call me often 📞</div><div class="opt-btn">Public support 👫</div>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <label>16. Favorite Movie of all time?</label>
+                <div class="options-grid" data-q="16">
+                    <div class="opt-btn">DDLJ 💖</div><div class="opt-btn">YJHD ✨</div>
+                    <div class="opt-btn">Titanic 🚢</div><div class="opt-btn">Jab We Met 🚉</div>
+                    <div class="opt-btn">Shershaah 🇮🇳</div><div class="opt-btn">Animal 🦁</div>
+                    <div class="opt-btn">Kabir Singh 🚬</div><div class="opt-btn">Harry Potter 🧙‍♀️</div>
+                    <div class="opt-btn">Marvel Movies 🦸‍♂️</div><div class="opt-btn">Pathaan 🎬</div>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <label>17. Favorite Song of all time?</label>
+                <div class="options-grid" data-q="17">
+                    <div class="opt-btn">Tum Hi Ho ❤️</div><div class="opt-btn">Perfect 💍</div>
+                    <div class="opt-btn">Kesariya 🧡</div><div class="opt-btn">Chale Aana 🎶</div>
+                    <div class="opt-btn">Raataan Lambiyan ✨</div><div class="opt-btn">Old Melody 📻</div>
+                    <div class="opt-btn">Party Song 🥳</div><div class="opt-btn">Rap Song 🎤</div>
+                    <div class="opt-btn">Sad Melody 🥺</div><div class="opt-btn">English Pop 🎧</div>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <label>18. When is your birthday? (Month)</label>
+                <div class="options-grid" data-q="18">
+                    <div class="opt-btn">Jan/Feb ❄️</div><div class="opt-btn">Mar/Apr 🌸</div>
+                    <div class="opt-btn">May/June ☀️</div><div class="opt-btn">July/Aug 🌧️</div>
+                    <div class="opt-btn">Sept/Oct 🍂</div><div class="opt-btn">Nov/Dec 🎄</div>
+                    <div class="opt-btn">Birthday Today! 🎂</div><div class="opt-btn">Next Month 🔜</div>
+                    <div class="opt-btn">Special Secret 🤫</div><div class="opt-btn">Winter Born ❄️</div>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <label>19. How much place have I made in your heart?</label>
+                <div class="options-grid" data-q="19">
+                    <div class="opt-btn">10%</div><div class="opt-btn">25%</div>
+                    <div class="opt-btn">50%</div><div class="opt-btn">75%</div>
+                    <div class="opt-btn">90%</div><div class="opt-btn">99%</div>
+                    <div class="opt-btn">100% ❤️</div><div class="opt-btn">Infinite ♾️</div>
+                    <div class="opt-btn">Full Power ⚡</div><div class="opt-btn">Only You 🥰</div>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <label>20. Am I boring you now? 😅</label>
+                <div class="options-grid" data-q="20">
+                    <div class="opt-btn">No! 😊</div><div class="opt-btn">Never! ✨</div>
+                    <div class="opt-btn">Loving It ❤️</div><div class="opt-btn">Not at all 🙅‍♀️</div>
+                    <div class="opt-btn">You're funny 😂</div><div class="opt-btn">Best Time ⏳</div>
+                    <div class="opt-btn">Maza aa raha 🥳</div><div class="opt-btn">Keep going 🔜</div>
+                    <div class="opt-btn">Cutie 😊</div><div class="opt-btn">Nope! ❤️</div>
+                </div>
+            </div>
+
+            <div class="love-box">
+                <h3>Do you like me? ❤️</h3>
+                <div class="btn-group">
+                    <button type="button" id="yBtn" class="choice-btn yes" onclick="selectLove('Yes')">YES</button>
+                    <button type="button" id="nBtn" class="choice-btn no" onclick="selectLove('No')">NO</button>
+                </div>
+                <div id="status-msg" style="margin-top:15px; font-weight:bold;"></div>
+            </div>
+
+            <button type="submit" class="submit-btn">Send All Answers to Ajay Chauhan 🚀</button>
+        </form>
+    </div>
+
+<script>
+    let answers = {};
+    let finalChoice = "None";
+
+    // Handle Option Selection
+    document.querySelectorAll('.options-grid').forEach(grid => {
+        grid.querySelectorAll('.opt-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const qNum = grid.getAttribute('data-q');
+                grid.querySelectorAll('.opt-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                answers[qNum] = this.innerText;
+            });
+        });
+    });
+
+    function selectLove(val) {
+        finalChoice = val;
+        const msg = document.getElementById('status-msg');
+        if(val === 'Yes') {
+            msg.innerText = "Aww! You made me the happiest person! 😍";
+            msg.style.color = "#2e7d32";
+        } else {
+            msg.innerText = "I will still try my best for you! 😊";
+            msg.style.color = "#c62828";
+        }
+    }
+
+    document.getElementById('loveForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Show the special "You're amazing" screen
+        document.getElementById('success-screen').style.display = "flex";
+
+        setTimeout(() => {
+            let result = "Hi Ajay Chauhan! Tanisha's Answers:\n\n";
+            for(let i=1; i<=20; i++){
+                result += `*Q${i}*: ${answers[i] || 'No selection'}\n`;
+            }
+            result += `\n*Liking status*: ${finalChoice}`;
+
+            window.open(`https://wa.me/919528508284?text=${encodeURIComponent(result)}`, '_blank');
+            document.getElementById('success-screen').style.display = "none";
+        }, 3000); 
+    });
+</script>
+</body>
+</html>
